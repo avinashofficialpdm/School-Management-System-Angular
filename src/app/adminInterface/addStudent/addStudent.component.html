@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="text-center">Add Student</h2>
+  {{addForm.value|json}}
+  <form [formGroup]="addForm">
+  <div class="row">
+  <div class="col-md-6 p-5">
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Student Name</mat-label >
+        <input matInput placeholder="Ex. John" formControlName="studentName" type="text">
+      </mat-form-field><br><br>
+      <mat-form-field appearance="fill" class="datePickerStyle">
+        <mat-label>Date Of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="fill" class="classSelector">
+        <mat-label>Select Class</mat-label>
+        <mat-select formControlName="class">
+          <mat-option  *ngFor="let classItem of classes" [value]="classItem.value">
+            {{classItem.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br><br>
+      <mat-form-field appearance="fill" class="divisionSelector">
+        <mat-label>Select Division</mat-label>
+        <mat-select formControlName="division">
+          <mat-option  *ngFor="let division of divisions" [value]="division.value">
+            {{division.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <!-- {{addForm.value|json}} -->
+  <div class="col-md-6 p-5">
+    <mat-form-field appearance="fill" class="genderSelector">
+      <mat-label>Select Subject</mat-label>
+      <mat-select formControlName="subject">
+        <mat-option  *ngFor="let subject of subjects" [value]="subject.value">
+          {{subject.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field><br><br>
+    <mat-form-field appearance="fill" class="subjectSelector">
+      <mat-label>Select Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option  *ngFor="let gender of genders" [value]="gender.value">
+          {{gender.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field><br><br>
+  </div>
+  </div>
+</form>
+  
+</div>
