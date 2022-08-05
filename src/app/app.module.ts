@@ -12,6 +12,7 @@ import { AdminLoginComponent } from './adminLogin/adminLogin.component';
 import { AdminInterfaceComponent } from './adminInterface/adminInterface.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddStudentComponent } from './adminInterface/addStudent/addStudent.component';
+import { AdminNavbarComponent } from './adminInterface/adminNavbar/adminNavbar.component';
 
 @NgModule({
   declarations: [				
@@ -20,7 +21,8 @@ import { AddStudentComponent } from './adminInterface/addStudent/addStudent.comp
       StudentLoginComponent,
       AdminLoginComponent,
       AdminInterfaceComponent,
-      AddStudentComponent
+      AddStudentComponent,
+      AdminNavbarComponent
    ],
   imports: [
     BrowserModule,

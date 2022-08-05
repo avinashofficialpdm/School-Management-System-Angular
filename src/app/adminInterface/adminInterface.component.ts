@@ -26,8 +26,4 @@ export class AdminInterfaceComponent implements OnInit {
     })
   }
 
-  logOut(){
-    localStorage.removeItem("adminLoggedIn")
-    this._rout.navigateByUrl("adminLogin")
-  }
 }
