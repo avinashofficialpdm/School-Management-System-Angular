@@ -26,4 +26,10 @@ export class AdminInterfaceComponent implements OnInit {
     })
   }
 
+  deleteUser(id:number){
+    if(confirm("Are you sure you want to delete this Student")){
+      this._serv.deleteUser(id)
+    }
+  }
+
 }

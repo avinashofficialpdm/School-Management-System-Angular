@@ -4,20 +4,25 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 text-center">
-      <form class="example-form mt-1">
+      <form class="example-form mt-1" [formGroup]="studentLoginForm" (ngSubmit)="loginStudent()">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Enter Your Name</mat-label>
-          <input matInput placeholder="Ex. John" >
+          <mat-label>Enter Username</mat-label>
+          <input matInput autocomplete="off" formControlName="username">
         </mat-form-field>
       <br><br>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Enter Your Password</mat-label>
-        <input matInput placeholder="Ex. Abc123#" type="password">
+        <input matInput type="password" formControlName="password">
       </mat-form-field>
-      <button mat-raised-button color="primary" class="float-end me-2 mt-2" style="width: 150px;">Login</button>   
+      <button mat-raised-button color="primary" class="float-end me-2 mt-2" style="width: 150px;" [disabled]="studentLoginForm.invalid">Login</button>   
 
       </form>
+      <button mat-raised-button color="warn" class="goBackButton" style="width: 150px;" routerLink="">Go Back</button>   
+
     </div>
-    <div class="col-md-3"></div>
+    
+    <div class="col-md-3">
+      <!-- {{studentLoginForm.value.username|json}} -->
+    </div>
   </div>
 </div>

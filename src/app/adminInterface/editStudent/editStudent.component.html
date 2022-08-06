@@ -1,9 +1,9 @@
 <app-adminNavbar></app-adminNavbar>
 
 <div class="container">
-  <h2 class="text-center mt-4 mat-display-1" style="margin: 0;">Add Student</h2>
-  <!-- {{addForm.value|json}} -->
-  <form [formGroup]="addForm" (ngSubmit)="add()">
+  <!-- {{editForm.value|json}} -->
+  <h2 class="text-center mt-4 mat-display-1" style="margin: 0;">Edit Student</h2>
+  <form [formGroup]="editForm" (ngSubmit)="editStudent()">
     <div class="row">
       <div class="col-md-6 ps-5 pe-5 py-4">
 
@@ -35,7 +35,6 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <!-- {{addForm.value|json}} -->
       <div class="col-md-6 ps-5 pe-5 py-4">
         <mat-form-field appearance="fill" class="genderSelector">
           <mat-label>Select Subject</mat-label>
@@ -56,26 +55,20 @@
         <form class="example-form">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Username</mat-label>
-            <input matInput #message maxlength="256" placeholder="Ex. user@677" autocomplete="off" formControlName="username">
-            <mat-hint align="start"><strong>Add a unique username</strong> </mat-hint>
-            <mat-hint align="end">{{message.value.length}} / 25</mat-hint>
+            <input matInput #message maxlength="256" placeholder="Ex. user@677" autocomplete="off" formControlName="username" readonly>
+            <mat-hint align="start"><strong>Username Cannot be Changed</strong> </mat-hint>
           </mat-form-field><br><br>
           <mat-form-field appearance="fill" class="passwordSelector">
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'text' : 'text'" formControlName="password" >
           </mat-form-field>
         </form>
       </div>
     </div>
     <button mat-raised-button color="primary" class="float-end " style="width: 150px; margin-right: 100px;"
-      >Add</button>
-    <!-- <button mat-raised-button color="primary" class="float-end " style="width: 150px; margin-right: 100px;"
-      [disabled]="addForm.invalid">Add</button> -->
-
+      >Submit</button>
   </form>
+  <button mat-raised-button color="warn" class="goBackButton" style="width: 150px; margin-left: 200px;" [routerLink]="['/adminInterface']">Go Back</button>   
+
 
 </div>

@@ -7,3 +7,9 @@
   .example-full-width {
     width: 100%;
   }
+
+  .goBackButton{
+    position: absolute;
+    bottom: 30px;
+
+  }

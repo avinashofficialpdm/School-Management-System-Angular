@@ -4,7 +4,7 @@
 <h1 class="text-center mat-display-2 mt-5 m-3">Students List</h1>
 <div class="container">
   <div class="row m-5">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-dark">
       <thead>
         <tr>
           <th>Name</th>
@@ -12,16 +12,26 @@
           <th>Divison</th>
           <th>Subject</th>
           <th>Gender</th>
+          <th>DOB</th>
+          <th>Action</th>
         </tr>
         
       </thead>
       <tbody>
         <tr *ngFor="let item of studentsList">
-          <td>{{item.name}}</td>
+          <td>{{item.studentName}}</td>
           <td>{{item.class}}</td>
           <td>{{item.division}}</td>
           <td>{{item.subject}}</td>
           <td>{{item.gender}}</td>
+          <td>{{item.dob|date}}</td>
+          <td>
+            <button mat-mini-fab color="accent" class="goBackButton mx-3" [routerLink]="['/editStudent',item.id]">Edit</button>   
+            <button mat-mini-fab color="primary" >
+              <mat-icon (click)="deleteUser(item.id)" >delete</mat-icon>
+            </button>
+
+          </td>
         </tr>
       </tbody>
     </table>

@@ -5,17 +5,19 @@
     <div class="col-md-6">
       <form class="example-form mt-1" [formGroup]="loginForm">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Enter Your Name</mat-label >
-          <input matInput placeholder="Ex. John" formControlName="username">
+          <mat-label>Enter Username</mat-label >
+          <input matInput autocomplete="off" formControlName="username">
         </mat-form-field>
         <br><br>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Enter Your Password</mat-label>
-          <input matInput placeholder="Ex. Abc123#" type="password" formControlName="password">
+          <input matInput autocomplete="off" type="password" formControlName="password">
         </mat-form-field>
         <button mat-raised-button color="primary" class="float-end me-2 mt-2" style="width: 150px;" (click)="loginAdmin()" [disabled]="loginForm.invalid">Login</button>
 
       </form>
+      <button mat-raised-button color="warn" class="goBackButton" style="width: 150px; margin-left: 200px;" routerLink="">Go Back</button>   
+
       <!-- {{loginForm.value|json}} -->
     </div>
     <div class="col-md-3"></div>
