@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
 
@@ -12,6 +12,8 @@ export class StudentNavbarComponent implements OnInit {
 
   constructor(private _rout: Router) { }
 
+  @Input() id:any
+
   ngOnInit() {
   }
   logOut() {
@@ -19,5 +21,9 @@ export class StudentNavbarComponent implements OnInit {
       localStorage.removeItem("currentLoggedInStudent")
       this._rout.navigateByUrl("studentLogin")
     }
+  }
+
+  changePassword(){
+    this._rout.navigateByUrl("changePassword"+"/"+this.id)
   }
 }

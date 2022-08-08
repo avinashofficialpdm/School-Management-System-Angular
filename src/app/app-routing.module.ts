@@ -6,6 +6,7 @@ import { AdminInterfaceComponent } from './adminInterface/adminInterface.compone
 import { EditStudentComponent } from './adminInterface/editStudent/editStudent.component';
 import { AdminLoginComponent } from './adminLogin/adminLogin.component';
 import { StudentGuard } from './student.guard';
+import { ChangePasswordStudentComponent } from './studentInterFace/changePasswordStudent/changePasswordStudent.component';
 import { StudentInterFaceComponent } from './studentInterFace/studentInterFace.component';
 import { StudentLoginComponent } from './studentLogin/studentLogin.component';
 import { WelcomePageComponent } from './WelcomePage/WelcomePage.component';
@@ -42,6 +43,11 @@ const routes: Routes = [
     path:"editStudent/:id",
     component:EditStudentComponent,
     canActivate:[AdminAuthGuard]
+  },
+  {
+    path:"changePassword/:id",
+    component:ChangePasswordStudentComponent,
+    canActivate:[StudentGuard]
   }
 ];
 

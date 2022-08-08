@@ -17,6 +17,7 @@ import { AdminNavbarComponent } from './adminInterface/adminNavbar/adminNavbar.c
 import { StudentInterFaceComponent } from './studentInterFace/studentInterFace.component';
 import { StudentNavbarComponent } from './studentInterFace/studentNavbar/studentNavbar.component';
 import { EditStudentComponent } from './adminInterface/editStudent/editStudent.component';
+import { ChangePasswordStudentComponent } from './studentInterFace/changePasswordStudent/changePasswordStudent.component';
 
 @NgModule({
   declarations: [					
@@ -29,7 +30,8 @@ import { EditStudentComponent } from './adminInterface/editStudent/editStudent.c
       AdminNavbarComponent,
       StudentInterFaceComponent,
       StudentNavbarComponent,
-      EditStudentComponent
+      EditStudentComponent,
+      ChangePasswordStudentComponent
    ],
   imports: [
     BrowserModule,

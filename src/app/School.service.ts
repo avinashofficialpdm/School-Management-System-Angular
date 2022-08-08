@@ -47,7 +47,9 @@ export class SchoolService {
         alert("Failed")
       }
     })
+  }
 
-    
+  changeStudentPassword(patchData:any,id:number){
+    this._http.patch(this.baseUrl+"/"+id,patchData).subscribe(res=>{})
   }
 }

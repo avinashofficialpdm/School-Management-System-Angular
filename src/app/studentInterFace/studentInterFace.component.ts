@@ -9,6 +9,7 @@ import { SchoolService } from '../School.service';
 export class StudentInterFaceComponent implements OnInit {
 
   currentLoggedInStudent:any
+  currentLoggedInStudentid:any
   constructor(private _serv:SchoolService) { }
 
   ngOnInit() {
@@ -17,7 +18,9 @@ export class StudentInterFaceComponent implements OnInit {
       let datas=res
       this.currentLoggedInStudent=datas.find((element:any)=>element.username==localStorage.getItem("currentLoggedInStudent"))
       // console.log(this.currentLoggedInStudent);
-
+      this.currentLoggedInStudentid=this.currentLoggedInStudent.id
+      console.log(this.currentLoggedInStudentid);
+      
     })
   }
 
